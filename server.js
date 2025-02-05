@@ -20,7 +20,7 @@ for (let i = 0; i < numCPUs; i++) {
   const chunk = files.slice(i * chunkSize, (i + 1) * chunkSize);
 
   if (chunk.length > 0) {
-    const worker = new Worker(path.join(__dirname, "workers.js"), {
+    const worker = new Worker(path.join(__dirname, "lib/workers.js"), {
       workerData: { files: chunk, inputDir, outputDir },
     });
 
